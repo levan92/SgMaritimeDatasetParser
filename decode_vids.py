@@ -7,8 +7,10 @@ out_img_dir = '/home/levan/Datasets/SGMaritimeDataset/VIS_Onshore/Imgs'
 samplePerSec = 1 
 
 for vid in os.listdir(video_dir):
+    #TODO deal with haze, split at VIS
     basename = vid.replace('_VIS.avi','')
     print(basename)
+    continue
     cap = cv2.VideoCapture(os.path.join(video_dir, vid))
     fps = cap.get(5)
     frameskip = fps // samplePerSec
