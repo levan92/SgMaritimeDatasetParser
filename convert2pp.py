@@ -14,7 +14,6 @@ annot_dir = '/media/dh/Data/SGMaritimeDataset/NIR/ObjectGT'
 img_dir = '/media/dh/Data/SGMaritimeDataset/NIR/Imgs'
 out_filepath = '/media/dh/Data/SGMaritimeDataset/NIR_annot.txt'
 
-
 wanted_indices = [1,3,4,5,6,7] # Ferry, Vessel/ship, Speed boat, Boat, Kayak, Sail boat
 
 '''
@@ -28,8 +27,9 @@ image_names = [name for name in os.listdir(img_dir) if name.endswith('.png')]
 img_dict = defaultdict(list)
 img_count = 0
 for imname in os.listdir(img_dir):
-    basename = '_'.join(imname.split('_')[:2])
-    frame_num = int(imname.split('frame_')[-1].split('.')[0])
+    # basename = '_'.join(imname.split('_')[:2])
+    basename = imname.split('_frame_')[0]
+    frame_num = int(imname.split('_frame_')[-1].split('.')[0])
     img_dict[basename].append((frame_num, imname))
     img_count+=1
 
@@ -39,7 +39,8 @@ img_count = 0
 annot_basenames = []
 for annot_name in os.listdir(annot_dir):
     if annot_name.endswith('_ObjectGT.mat'):
-        basename = '_'.join(annot_name.split('_')[:2])
+        # basename = '_'.join(annot_name.split('_')[:2])
+        basename = annot_name.split('_ObjectGT')[0]
         mat = scipy.io.loadmat(os.path.join(annot_dir, annot_name))
         annots = mat['structXML'].flatten()
         annot_basenames.append(basename)
