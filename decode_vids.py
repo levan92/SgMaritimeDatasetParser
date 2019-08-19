@@ -1,16 +1,18 @@
 import os
 import cv2
 
-
-video_dir = '/home/levan/Datasets/SGMaritimeDataset/VIS_Onshore/Videos'
-out_img_dir = '/home/levan/Datasets/SGMaritimeDataset/VIS_Onshore/Imgs'
+video_dir = '/media/dh/Data/SGMaritimeDataset/NIR/Videos'
+out_img_dir = '/media/dh/Data/SGMaritimeDataset/NIR/Imgs'
 samplePerSec = 1 
 
+print('Sampling videos in {} at {} frame per second'.format(video_dir, samplePerSec))
+
+if not os.path.isdir(out_img_dir):
+    os.makedirs(out_img_dir)
+assert os.path.isdir(out_img_dir),'out_img_dir is not a directory!'
+
 for vid in os.listdir(video_dir):
-    #TODO deal with haze, split at VIS
-    basename = vid.replace('_VIS.avi','')
-    print(basename)
-    continue
+    basename = '_'.join(vid.split('_')[:2])
     cap = cv2.VideoCapture(os.path.join(video_dir, vid))
     fps = cap.get(5)
     frameskip = fps // samplePerSec
