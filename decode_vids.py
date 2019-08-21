@@ -1,14 +1,14 @@
 import os
 import cv2
 
-# video_dir = '/media/dh/Data/SGMaritimeDataset/VIS_Onshore/Videos'
-# out_img_dir = '/media/dh/Data/SGMaritimeDataset/VIS_Onshore/Imgs'
+# video_dir = '/media/dh/DATA4TB/Datasets/SGMaritimeDataset/VIS_Onshore/Videos'
+# out_img_dir = '/media/dh/DATA4TB/Datasets/SGMaritimeDataset/VIS_Onshore/Imgs'
 
-# video_dir = '/media/dh/Data/SGMaritimeDataset/VIS_Onboard/Videos'
-# out_img_dir = '/media/dh/Data/SGMaritimeDataset/VIS_Onboard/Imgs'
+# video_dir = '/media/dh/DATA4TB/Datasets/SGMaritimeDataset/VIS_Onboard/Videos'
+# out_img_dir = '/media/dh/DATA4TB/Datasets/SGMaritimeDataset/VIS_Onboard/Imgs'
 
-video_dir = '/media/dh/Data/SGMaritimeDataset/NIR/Videos'
-out_img_dir = '/media/dh/Data/SGMaritimeDataset/NIR/Imgs'
+video_dir = '/media/dh/DATA4TB/Datasets/SGMaritimeDataset/NIR/Videos'
+out_img_dir = '/media/dh/DATA4TB/Datasets/SGMaritimeDataset/NIR/Imgs'
 
 samplePerSec = 1 
 
